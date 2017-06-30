@@ -370,6 +370,7 @@
      */
    var _checkDelimiter = function(event){
       var found = false;
+      //(add support for the space key)
       if (event.which == 13 || event.which == 32) {
          return true;
       }

@@ -301,6 +301,7 @@
 				}
 				// if user types a default delimiter like comma,semicolon and then create a new tag
 				$(data.fake_input).bind('keypress',data,function(event) {
+					console.log('keypress');
 					if (_checkDelimiter(event)) {
 					    event.preventDefault();
 						if( (event.data.minChars <= $(event.data.fake_input).val().length) && (!event.data.maxChars || (event.data.maxChars >= $(event.data.fake_input).val().length)) )
@@ -369,7 +370,7 @@
      */
    var _checkDelimiter = function(event){
       var found = false;
-      if (event.which == 13) {
+      if (event.which == 13 || event.which == 32) {
          return true;
       }
 
